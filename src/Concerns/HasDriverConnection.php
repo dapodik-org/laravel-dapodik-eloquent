@@ -70,7 +70,7 @@ trait HasDriverConnection
         $parts = explode('\\', $afterModels);
         $snakeParts = array_map(fn ($part) => Str::snake($part), $parts);
 
-        $folder = $snakeParts[0] ?? '';
+        $folder = $snakeParts[0];
 
         $driver = Eloquent::getDriverName();
 
