@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Bank extends Model
 {
-    use SoftDeletes, HasDriverConnection;
+    use HasDriverConnection, SoftDeletes;
 
     protected $primaryKey = 'id_bank';
 

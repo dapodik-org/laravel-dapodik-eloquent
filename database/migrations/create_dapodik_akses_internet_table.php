@@ -1,12 +1,13 @@
 <?php
 
 use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\AksesInternet;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
+    protected string $model = AksesInternet::class;
 
-    protected string $model = \Dapodik\Laravel\Eloquent\Models\Rest\Ref\AksesInternet::class;
     public function up(): void
     {
         $this->createSchemaIfNotExist();

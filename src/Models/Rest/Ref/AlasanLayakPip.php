@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AlasanLayakPip extends Model
 {
-    use SoftDeletes, HasDriverConnection;
+    use HasDriverConnection, SoftDeletes;
 
     protected $primaryKey = 'id_layak_pip';
 

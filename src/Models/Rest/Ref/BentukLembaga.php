@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BentukLembaga extends Model
 {
-    use SoftDeletes, HasDriverConnection;
+    use HasDriverConnection, SoftDeletes;
 
     protected $primaryKey = 'bentuk_lembaga_id';
 

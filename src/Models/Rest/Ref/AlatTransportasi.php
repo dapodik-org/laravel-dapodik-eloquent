@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AlatTransportasi extends Model
 {
-    use SoftDeletes, HasDriverConnection;
+    use HasDriverConnection, SoftDeletes;
 
     protected $primaryKey = 'alat_transportasi_id';
 

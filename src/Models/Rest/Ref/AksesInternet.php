@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AksesInternet extends Model
 {
-    use SoftDeletes, HasDriverConnection;
+    use HasDriverConnection, SoftDeletes;
 
     protected $primaryKey = 'akses_internet_id';
 
@@ -17,7 +17,7 @@ class AksesInternet extends Model
     protected function casts(): array
     {
         return [
-            'media' => 'boolean'
+            'media' => 'boolean',
         ];
     }
 }

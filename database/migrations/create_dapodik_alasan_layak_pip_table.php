@@ -1,10 +1,12 @@
 <?php
 
 use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\AlasanLayakPip;
 use Illuminate\Database\Schema\Blueprint;
 
-return new class extends Migration {
-    protected string $model = \Dapodik\Laravel\Eloquent\Models\Rest\Ref\AlasanLayakPip::class;
+return new class extends Migration
+{
+    protected string $model = AlasanLayakPip::class;
 
     public function up(): void
     {

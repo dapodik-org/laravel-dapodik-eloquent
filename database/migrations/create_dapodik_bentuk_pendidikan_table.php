@@ -1,10 +1,12 @@
 <?php
 
 use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\BentukPendidikan;
 use Illuminate\Database\Schema\Blueprint;
 
-return new class extends Migration {
-    protected string $model = \Dapodik\Laravel\Eloquent\Models\Rest\Ref\BentukPendidikan::class;
+return new class extends Migration
+{
+    protected string $model = BentukPendidikan::class;
 
     public function up(): void
     {
@@ -21,7 +23,7 @@ return new class extends Migration {
             $table->boolean('jenjang_tinggi');
             $table->string('direktorat_pembinaan')->nullable();
             $table->boolean('aktif');
-            $table->char('formalitas_pendidikan',1);
+            $table->char('formalitas_pendidikan', 1);
             $table->timestamps();
             $table->softDeletes();
         });
