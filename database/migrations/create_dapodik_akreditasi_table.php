@@ -1,11 +1,13 @@
 <?php
 
 use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Akreditasi;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
-    protected string $model = \Dapodik\Laravel\Eloquent\Models\Rest\Ref\Akreditasi::class;
+return new class extends Migration
+{
+    protected string $model = Akreditasi::class;
+
     public function up(): void
     {
         $this->createSchemaIfNotExist();

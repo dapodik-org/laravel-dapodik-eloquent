@@ -1,12 +1,13 @@
 <?php
 
 use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Agama;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
+    protected string $model = Agama::class;
 
-    protected string $model = \Dapodik\Laravel\Eloquent\Models\Rest\Ref\Agama::class;
     public function up(): void
     {
         $this->createSchemaIfNotExist();
