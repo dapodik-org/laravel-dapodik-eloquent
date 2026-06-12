@@ -24,6 +24,14 @@ class EloquentServiceProvider extends PackageServiceProvider
                 'create_dapodik_mst_wilayah_table',
                 'create_dapodik_agama_table',
                 'create_dapodik_akreditasi_table',
+                'create_dapodik_akses_internet_table',
+                'create_dapodik_alasan_layak_pip_table',
+                'create_dapodik_alat_transportasi_table',
+                'create_dapodik_bank_table',
+                'create_dapodik_bentuk_lembaga_table',
+                'create_dapodik_bentuk_pendidikan_table',
+                'create_dapodik_bidang_studi_table',
+                'create_dapodik_bidang_usaha_table',
             ]);
     }
 

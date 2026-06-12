@@ -1,0 +1,18 @@
+<?php
+
+namespace Dapodik\Laravel\Eloquent\Models\Rest\Ref;
+
+use Dapodik\Laravel\Eloquent\Concerns\HasDriverConnection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class BidangUsaha extends Model
+{
+    use SoftDeletes, HasDriverConnection;
+
+    protected $primaryKey = 'bidang_usaha_id';
+
+    public $incrementing = false;
+
+    protected $keyType = 'string';
+}
