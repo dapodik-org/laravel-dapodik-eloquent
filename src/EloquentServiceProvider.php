@@ -32,6 +32,14 @@ class EloquentServiceProvider extends PackageServiceProvider
                 'create_dapodik_bentuk_pendidikan_table',
                 'create_dapodik_bidang_studi_table',
                 'create_dapodik_bidang_usaha_table',
+                'create_dapodik_ekstrakurikuler_table',
+                'create_dapodik_errortype_table',
+                'create_dapodik_fasilitas_layanan_table',
+                'create_dapodik_gelar_akademik_table',
+                'create_dapodik_jabatan_fungsional_table',
+                'create_dapodik_jenis_ptk_table',
+                'create_dapodik_jabatan_ptk_table',
+                'create_dapodik_jabatan_tugas_ptk_table',
             ]);
     }
 
