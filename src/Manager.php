@@ -130,7 +130,9 @@ class Manager
 
         $type = [
             'prefix' => 'null|string',
+            'suffix' => 'null|string',
             'multi_connection' => 'boolean',
+            'models' => 'array',
         ];
 
         return $this->validateConfig($config, $type);

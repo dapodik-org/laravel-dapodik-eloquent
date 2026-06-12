@@ -40,6 +40,13 @@ class EloquentServiceProvider extends PackageServiceProvider
                 'create_dapodik_jenis_ptk_table',
                 'create_dapodik_jabatan_ptk_table',
                 'create_dapodik_jabatan_tugas_ptk_table',
+                'create_dapodik_jadwal_paud_table',
+                'create_dapodik_jenis_akt_pd_table',
+                'create_dapodik_jenis_aktivitas_kepanitiaan_table',
+                'create_dapodik_jenis_bantuan_table',
+                'create_dapodik_sumber_dana_table',
+                'create_dapodik_jenis_beasiswa_table',
+                'create_dapodik_jenis_cita_table',
             ]);
     }
 
