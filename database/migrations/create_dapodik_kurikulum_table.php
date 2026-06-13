@@ -1,0 +1,32 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Kurikulum;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = Kurikulum::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->bigInteger('kurikulum_id')->primary();
+            $table->string('nama_kurikulum');
+            $table->date('mulai_berlaku');
+            $table->boolean('sistem_sks')->default(false);
+            $table->decimal('total_sks', 3, 0)->default(0);
+            $table->bigInteger('jenjang_pendidikan_id');
+            $table->char('jurusan_id', 25)->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

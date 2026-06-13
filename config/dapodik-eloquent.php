@@ -37,8 +37,29 @@ use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKs;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLayananInternet;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLembaga;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLk;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPendaftaran;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPenghargaan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPesan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPrasarana;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPrestasi;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPtk;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisRombel;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisSarana;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisSertifikasi;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisTest;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisTinggal;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisTunjangan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenjangKepengawasan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenjangPendidikan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Jurusan;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KategoriDesa;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KategoriTk;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KeahlianLaboratorium;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KebutuhanKhusus;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KelompokBidang;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KelompokUsaha;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KlasifikasiLembaga;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Kurikulum;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LevelWilayah;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\MstWilayah;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Negara;
@@ -109,6 +130,27 @@ return [
             'jenis_layanan_internet' => JenisLayananInternet::class,
             'jenis_lembaga' => JenisLembaga::class,
             'jenis_lk' => JenisLk::class,
+            'jenis_pendaftaran' => JenisPendaftaran::class,
+            'jenis_penghargaan' => JenisPenghargaan::class,
+            'jenis_pesan' => JenisPesan::class,
+            'jenis_prasarana' => JenisPrasarana::class,
+            'jenis_prestasi' => JenisPrestasi::class,
+            'jenis_rombel' => JenisRombel::class,
+            'jenis_sarana' => JenisSarana::class,
+            'jenis_test' => JenisTest::class,
+            'jenis_tinggal' => JenisTinggal::class,
+            'jenis_tunjangan' => JenisTunjangan::class,
+            'jenjang_kepengawasan' => JenjangKepengawasan::class,
+            'jenjang_pendidikan' => JenjangPendidikan::class,
+            'kategori_tk' => KategoriTk::class,
+            'keahlian_laboratorium' => KeahlianLaboratorium::class,
+            'kebutuhan_khusus' => KebutuhanKhusus::class,
+            'kelompok_bidang' => KelompokBidang::class,
+            'jenis_sertifikasi' => JenisSertifikasi::class,
+            'jurusan' => Jurusan::class,
+            'kelompok_usaha' => KelompokUsaha::class,
+            'klasifikasi_lembaga' => KlasifikasiLembaga::class,
+            'kurikulum' => Kurikulum::class,
         ],
     ],
 ];

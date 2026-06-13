@@ -1,0 +1,32 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPrasarana;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = JenisPrasarana::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->bigInteger('jenis_prasarana_id')->primary();
+            $table->string('nama');
+            $table->boolean('a_unit_organisasi')->default(false);
+            $table->boolean('a_tanah')->default(false);
+            $table->boolean('a_bangunan')->default(false);
+            $table->boolean('a_ruang')->default(false);
+            $table->boolean('a_sub');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

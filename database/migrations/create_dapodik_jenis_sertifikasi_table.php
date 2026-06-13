@@ -1,0 +1,32 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisSertifikasi;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = JenisSertifikasi::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->bigInteger('id_jenis_sertifikasi')->primary();
+            $table->string('jenis_sertifikasi');
+            $table->boolean('prof_guru');
+            $table->boolean('kepala_sekolah');
+            $table->boolean('laboran');
+            $table->boolean('a_pd');
+            $table->bigInteger('kebutuhan_khusus_id');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};
