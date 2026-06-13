@@ -1,0 +1,29 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKeluar;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = JenisKeluar::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->char('jenis_keluar_id', 1)->primary();
+            $table->string('ket_keluar');
+            $table->boolean('keluar_pd');
+            $table->boolean('keluar_ptk');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

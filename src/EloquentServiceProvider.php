@@ -47,6 +47,20 @@ class EloquentServiceProvider extends PackageServiceProvider
                 'create_dapodik_sumber_dana_table',
                 'create_dapodik_jenis_beasiswa_table',
                 'create_dapodik_jenis_cita_table',
+                'create_dapodik_jenis_diklat_table',
+                'create_dapodik_jenis_gugus_table',
+                'create_dapodik_jenis_hapus_buku_table',
+                'create_dapodik_jenis_hobby_table',
+                'create_dapodik_jenis_ijazah_table',
+                'create_dapodik_jenis_keluar_table',
+                'create_dapodik_jenis_kepanitiaan_table',
+                'create_dapodik_jenis_kerusakan_table',
+                'create_dapodik_jenis_kesejahteraan_table',
+                'create_dapodik_jenis_koneksi_table',
+                'create_dapodik_jenis_ks_table',
+                'create_dapodik_jenis_layanan_internet_table',
+                'create_dapodik_jenis_lembaga_table',
+                'create_dapodik_jenis_lk_table',
             ]);
     }
 

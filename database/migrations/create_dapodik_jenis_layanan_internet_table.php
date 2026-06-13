@@ -1,0 +1,27 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLayananInternet;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = JenisLayananInternet::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->bigInteger('jenis_layanan_internet_id')->primary();
+            $table->string('jenis_layanan');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

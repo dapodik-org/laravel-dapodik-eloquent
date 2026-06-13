@@ -23,6 +23,20 @@ use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisAktPd;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisBantuan;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisBeasiswa;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisCita;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisDiklat;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisGugus;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisHapusBuku;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisHobby;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisIjazah;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKeluar;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKepanitiaan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKerusakan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKesejahteraan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKoneksi;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisKs;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLayananInternet;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLembaga;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLk;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPtk;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KategoriDesa;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LevelWilayah;
@@ -81,6 +95,20 @@ return [
             'sumber_dana' => SumberDana::class,
             'jenis_beasiswa' => JenisBeasiswa::class,
             'jenis_cita' => JenisCita::class,
+            'jenis_diklat' => JenisDiklat::class,
+            'jenis_gugus' => JenisGugus::class,
+            'jenis_hapus_buku' => JenisHapusBuku::class,
+            'jenis_hobby' => JenisHobby::class,
+            'jenis_ijazah' => JenisIjazah::class,
+            'jenis_keluar' => JenisKeluar::class,
+            'jenis_kepanitiaan' => JenisKepanitiaan::class,
+            'jenis_kerusakan' => JenisKerusakan::class,
+            'jenis_kesejahteraan' => JenisKesejahteraan::class,
+            'jenis_koneksi' => JenisKoneksi::class,
+            'jenis_ks' => JenisKs::class,
+            'jenis_layanan_internet' => JenisLayananInternet::class,
+            'jenis_lembaga' => JenisLembaga::class,
+            'jenis_lk' => JenisLk::class,
         ],
     ],
 ];
