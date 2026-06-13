@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Facade;
  * @method static string getConnectionName()
  * @method static array getConnections()
  * @method static string getDriverName()
+ * @method static array getModels()
+ * @method static null|string|array getModel(string $model)
  * @method static bool isMultiConnection()
  * @method static array supportDrivers()
  *

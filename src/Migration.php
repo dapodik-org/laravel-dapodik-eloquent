@@ -20,7 +20,7 @@ abstract class Migration extends \Illuminate\Database\Migrations\Migration
     public function getConnection(): ?string
     {
         if (Eloquent::isMultiConnection()) {
-            return app($this->model)->getConnectionName();
+            return app($this->getModel())->getConnectionName();
         }
 
         return parent::getConnection() ?? config('database.default');
@@ -33,8 +33,8 @@ abstract class Migration extends \Illuminate\Database\Migrations\Migration
     {
         if (Eloquent::isMultiConnection() && Eloquent::getDriverName() === 'pgsql') {
             // Retrieve schema via reflection helper or direct getter
-            $schema = method_exists(app($this->model), 'getSchema')
-                ? app($this->model)->getSchema()
+            $schema = method_exists(app($this->getModel()), 'getSchema')
+                ? app($this->getModel())->getSchema()
                 : null;
 
             if ($schema) {
@@ -49,10 +49,11 @@ abstract class Migration extends \Illuminate\Database\Migrations\Migration
      */
     public function createTable(\Closure $blueprint): void
     {
-        // CRITICAL FIX: Target the dynamic connection explicitly
-        Schema::connection($this->getConnection())->create($this->getTable(), function (Blueprint $table) use ($blueprint) {
-            $blueprint($table);
-        });
+        if (! Schema::connection($this->getConnection())->hasTable($this->getTable())) {
+            Schema::connection($this->getConnection())->create($this->getTable(), function (Blueprint $table) use ($blueprint) {
+                $blueprint($table);
+            });
+        }
     }
 
     /**
@@ -65,10 +66,25 @@ abstract class Migration extends \Illuminate\Database\Migrations\Migration
     }
 
     /**
+     * Drop columns from a table schema.
+     *
+     * @param  string|array<string>  $columns
+     */
+    public function dropColumns(array|string $columns): void
+    {
+        Schema::connection($this->getConnection())->dropColumns($this->getTable(), $columns);
+    }
+
+    /**
      * Get the resolved table name.
      */
     public function getTable(): string
     {
-        return app($this->model)->getTable();
+        return app($this->getModel())->getTable();
+    }
+
+    public function getModel(): string
+    {
+        return $this->model;
     }
 }

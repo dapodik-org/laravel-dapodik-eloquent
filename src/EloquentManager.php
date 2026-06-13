@@ -185,4 +185,14 @@ class EloquentManager
     {
         $this->connections[] = $connection;
     }
+
+    public function getModels(): array
+    {
+        return $this->config['models'];
+    }
+
+    public function getModel(string $model): string|array|null
+    {
+        return $this->config['models'][$model];
+    }
 }
