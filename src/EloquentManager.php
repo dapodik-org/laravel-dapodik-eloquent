@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Macroable;
 use InvalidArgumentException;
 
-class Manager
+class EloquentManager
 {
     use Macroable {
         __call as macroCall;

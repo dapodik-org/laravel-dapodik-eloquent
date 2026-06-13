@@ -127,13 +127,13 @@ class EloquentServiceProvider extends PackageServiceProvider
 
     public function registeringPackage(): void
     {
-        $this->app->singleton('dapodik-eloquent', function ($app) {
-            return new Manager($app);
+        $this->app->singleton('dapodik.eloquent.laravel', function ($app) {
+            return new EloquentManager($app);
         });
     }
 
     public function bootingPackage(): void
     {
-        app('dapodik-eloquent');
+        app('dapodik.eloquent.laravel');
     }
 }

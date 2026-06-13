@@ -2,7 +2,7 @@
 
 namespace Dapodik\Laravel\Eloquent\Facades;
 
-use Dapodik\Laravel\Eloquent\Manager;
+use Dapodik\Laravel\Eloquent\EloquentManager;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Facade;
  * @method static bool isMultiConnection()
  * @method static array supportDrivers()
  *
- * @see Manager
+ * @see EloquentManager
  */
 class Eloquent extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'dapodik-eloquent';
+        return 'dapodik.eloquent.laravel';
     }
 }
