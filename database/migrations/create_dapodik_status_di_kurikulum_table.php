@@ -1,0 +1,27 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusDiKurikulum;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = StatusDiKurikulum::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->bigInteger('status_di_kurikulum')->primary();
+            $table->string('ket_stat_di_kurikulum');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

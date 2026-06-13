@@ -6,11 +6,11 @@ use Dapodik\Laravel\Eloquent\Concerns\HasDriverConnection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class JenisPesan extends Model
+class TingkatPrestasi extends Model
 {
     use HasDriverConnection, SoftDeletes;
 
-    protected $primaryKey = 'jenis_pesan_id';
+    protected $primaryKey = 'tingkat_prestasi_id';
 
     public $incrementing = false;
 }

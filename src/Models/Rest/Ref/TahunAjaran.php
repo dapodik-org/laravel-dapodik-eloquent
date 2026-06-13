@@ -6,21 +6,20 @@ use Dapodik\Laravel\Eloquent\Concerns\HasDriverConnection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Ekstrakurikuler extends Model
+class TahunAjaran extends Model
 {
     use HasDriverConnection, SoftDeletes;
 
-    protected $primaryKey = 'id_ekskul';
+    protected $primaryKey = 'tahun_ajaran_id';
 
     public $incrementing = false;
 
     protected function casts(): array
     {
         return [
-            'u_sd' => 'boolean',
-            'u_smp' => 'boolean',
-            'u_sma' => 'boolean',
-            'u_smk' => 'boolean',
+            'periode_aktif' => 'boolean',
+            'tanggal_mulai' => 'date',
+            'tanggal_selesai' => 'date',
         ];
     }
 }

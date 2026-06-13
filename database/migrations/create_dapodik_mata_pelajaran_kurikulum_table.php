@@ -1,0 +1,38 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\MataPelajaranKurikulum;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = MataPelajaranKurikulum::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->bigInteger('kurikulum_id');
+            $table->bigInteger('mata_pelajaran_id');
+            $table->bigInteger('tingkat_pendidikan_id');
+            $table->decimal('jumlah_jam', 2, 0);
+            $table->decimal('jumlah_jam_maksimum', 2, 0);
+            $table->bigInteger('status_di_kurikulum');
+            $table->boolean('wajib');
+            $table->decimal('sks', 2, 0)->default(0);
+            $table->boolean('a_peminatan');
+            $table->char('area_kompetensi', 1);
+            $table->uuid('gmp_id')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+
+            $table->primary(['kurikulum_id', 'mata_pelajaran_id', 'tingkat_pendidikan_id'], 'pk_mata_pelajaran_kurikulum');
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

@@ -1,0 +1,31 @@
+<?php
+
+use Dapodik\Laravel\Eloquent\Migration;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StandarSarana;
+use Illuminate\Database\Schema\Blueprint;
+
+return new class extends Migration
+{
+    protected string $model = StandarSarana::class;
+
+    public function up(): void
+    {
+        $this->createSchemaIfNotExist();
+
+        $this->createTable(function (Blueprint $table) {
+            $table->uuid('id_std_sarana')->primary();
+            $table->bigInteger('jenis_prasarana_id');
+            $table->bigInteger('jenis_sarana_id');
+            $table->string('jurusan_id', 25)->nullable();
+            $table->bigInteger('bentuk_pendidikan_id');
+            $table->boolean('a_harus_ada');
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    public function down(): void
+    {
+        $this->dropTable();
+    }
+};

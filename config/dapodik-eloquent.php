@@ -10,7 +10,7 @@ use Dapodik\Laravel\Eloquent\Models\Rest\Ref\BentukLembaga;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\BentukPendidikan;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\BidangStudi;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\BidangUsaha;
-use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Ekstrakurikuler;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\EkstraKurikuler;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Errortype;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\FasilitasLayanan;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\GelarAkademik;
@@ -39,7 +39,6 @@ use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLembaga;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisLk;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPendaftaran;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPenghargaan;
-use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPesan;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPrasarana;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPrestasi;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\JenisPtk;
@@ -60,10 +59,38 @@ use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KelompokBidang;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KelompokUsaha;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KlasifikasiLembaga;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Kurikulum;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LembagaAkreditasi;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LembagaPengangkat;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LembSertifikasi;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LevelWilayah;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\MataPelajaran;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\MataPelajaranKurikulum;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\MstWilayah;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Negara;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\PangkatGolongan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Pekerjaan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\PemakaiPrasarana;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\PemakaiSarana;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Penghasilan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Semester;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\SertifikasiIso;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StandarSarana;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusAnak;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusDiKurikulum;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusKeaktifanPegawai;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusKepegawaian;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusKepemilikan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\StatusKepemilikanSarpras;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\SumberAir;
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\SumberDana;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\SumberDanaSekolah;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\SumberGaji;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\SumberListrik;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\TahunAjaran;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\TingkatPendidikan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\TingkatPenghargaan;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\TingkatPrestasi;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\WaktuPenyelenggaraan;
 
 return [
 
@@ -101,7 +128,7 @@ return [
             'bentuk_pendidikan' => BentukPendidikan::class,
             'bidang_studi' => BidangStudi::class,
             'bidang_usaha' => BidangUsaha::class,
-            'ekstrakurikuler' => Ekstrakurikuler::class,
+            'ekstra_kurikuler' => EkstraKurikuler::class,
             'errortype' => Errortype::class,
             'fasilitas_layanan' => FasilitasLayanan::class,
             'gelar_akademik' => GelarAkademik::class,
@@ -132,7 +159,6 @@ return [
             'jenis_lk' => JenisLk::class,
             'jenis_pendaftaran' => JenisPendaftaran::class,
             'jenis_penghargaan' => JenisPenghargaan::class,
-            'jenis_pesan' => JenisPesan::class,
             'jenis_prasarana' => JenisPrasarana::class,
             'jenis_prestasi' => JenisPrestasi::class,
             'jenis_rombel' => JenisRombel::class,
@@ -151,6 +177,34 @@ return [
             'kelompok_usaha' => KelompokUsaha::class,
             'klasifikasi_lembaga' => KlasifikasiLembaga::class,
             'kurikulum' => Kurikulum::class,
+            'lemb_sertifikasi' => LembSertifikasi::class,
+            'lembaga_akreditasi' => LembagaAkreditasi::class,
+            'lembaga_pengangkat' => LembagaPengangkat::class,
+            'mata_pelajaran' => MataPelajaran::class,
+            'status_di_kurikulum' => StatusDiKurikulum::class,
+            'tingkat_pendidikan' => TingkatPendidikan::class,
+            'mata_pelajaran_kurikulum' => MataPelajaranKurikulum::class,
+            'pangkat_golongan' => PangkatGolongan::class,
+            'pekerjaan' => Pekerjaan::class,
+            'pemakai_prasarana' => PemakaiPrasarana::class,
+            'pemakai_sarana' => PemakaiSarana::class,
+            'penghasilan' => Penghasilan::class,
+            'tahun_ajaran' => TahunAjaran::class,
+            'semester' => Semester::class,
+            'sertifikasi_iso' => SertifikasiIso::class,
+            'standar_sarana' => StandarSarana::class,
+            'status_anak' => StatusAnak::class,
+            'status_keaktifan_pegawai' => StatusKeaktifanPegawai::class,
+            'status_kepegawaian' => StatusKepegawaian::class,
+            'status_kepemilikan' => StatusKepemilikan::class,
+            'status_kepemilikan_sarpras' => StatusKepemilikanSarpras::class,
+            'sumber_air' => SumberAir::class,
+            'sumber_dana_sekolah' => SumberDanaSekolah::class,
+            'sumber_gaji' => SumberGaji::class,
+            'sumber_listrik' => SumberListrik::class,
+            'tingkat_penghargaan' => TingkatPenghargaan::class,
+            'tingkat_prestasi' => TingkatPrestasi::class,
+            'waktu_penyelenggaraan' => WaktuPenyelenggaraan::class,
         ],
     ],
 ];
