@@ -10,8 +10,6 @@ class MataPelajaranKurikulum extends Pivot
 {
     use HasDriverConnection, SoftDeletes;
 
-    protected $primaryKey = ['kurikulum_id', 'mata_pelajaran_id', 'tingkat_pendidikan_id'];
-
     public $incrementing = false;
 
     protected function casts(): array

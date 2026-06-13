@@ -10,7 +10,5 @@ class PemakaiSarana extends Pivot
 {
     use HasDriverConnection, SoftDeletes;
 
-    protected $primaryKey = ['jenis_sarana_id', 'jurusan_id'];
-
     public $incrementing = false;
 }
