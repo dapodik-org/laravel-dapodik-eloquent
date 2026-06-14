@@ -71,7 +71,7 @@ trait HasDriverConnection
 
         // If not found (model is published), try Models\Dapodik\ (published location)
         if ($afterModels === (string) __CLASS__) {
-            $afterModels = (string) str(__CLASS__)->after('Models\\Dapodik\\Rest\\');
+            $afterModels = (string) str(__CLASS__)->after('Models\\Dapodik\\');
         }
 
         $parts = explode('\\', $afterModels);
