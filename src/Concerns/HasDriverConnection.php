@@ -68,12 +68,12 @@ trait HasDriverConnection
     {
         // Try to extract namespace after Models\Rest\ (original location)
         $afterModels = (string) str(__CLASS__)->after('Models\\Rest\\');
-        
+
         // If not found (model is published), try Models\Dapodik\ (published location)
         if ($afterModels === (string) __CLASS__) {
             $afterModels = (string) str(__CLASS__)->after('Models\\Dapodik\\Rest\\');
         }
-        
+
         $parts = explode('\\', $afterModels);
         $snakeParts = array_map(fn ($part) => Str::snake($part), $parts);
 
