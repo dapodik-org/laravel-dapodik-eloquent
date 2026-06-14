@@ -5,30 +5,46 @@
 [![GitHub Code Style Action Status](https://github.com/dapodik-org/laravel-dapodik-eloquent/actions/workflows/fix-php-code-style-issues.yml/badge.svg)](https://github.com/dapodik-org/laravel-dapodik-eloquent/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/dapodik-org/laravel-dapodik-eloquent.svg?style=flat-square)](https://packagist.org/packages/dapodik-org/laravel-dapodik-eloquent)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Paket ini menyediakan model Eloquent Dapodik yang siap digunakan di aplikasi Laravel Anda. Termasuk konfigurasi model, migrasi, dan command untuk menerbitkan model ke dalam folder aplikasi.
 
 ## Installation
 
-You can install the package via composer:
+Install package lewat Composer:
 
 ```bash
 composer require dapodik-org/laravel-dapodik-eloquent
 ```
 
-You can publish and run the migrations with:
+## Publish
+
+Publish migrasi dan jalankan:
 
 ```bash
 php artisan vendor:publish --tag="dapodik-eloquent-migrations"
 php artisan migrate
 ```
 
-You can publish the config file with:
+Publish file konfigurasi:
 
 ```bash
 php artisan vendor:publish --tag="dapodik-eloquent-config"
 ```
 
-This is the contents of the published config file:
+Publish model package ke aplikasi Anda:
+
+```bash
+php artisan dapodik:eloquent-publish
+```
+
+Untuk publish satu model saja, gunakan nama model (key) seperti `agama`:
+
+```bash
+php artisan dapodik:eloquent-publish agama
+```
+
+Command ini akan menyalin seluruh folder `src/Models/Rest` dari package ke `app/Models/Dapodik`, dan mengubah namespace model menjadi `App\Models\Dapodik\...`.
+
+Ini adalah contoh isi file konfigurasi yang dapat dipublish:
 
 ```php
 use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LevelWilayah;

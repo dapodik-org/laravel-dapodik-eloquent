@@ -6,6 +6,7 @@ use Dapodik\Laravel\Eloquent\EloquentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase as Orchestra;
+use Workbench\App\Console\Kernel as ConsoleKernel;
 
 class TestCase extends Orchestra
 {
@@ -25,7 +26,7 @@ class TestCase extends Orchestra
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app)
     {
         config()->set('database.default', 'testing');
 
@@ -33,5 +34,14 @@ class TestCase extends Orchestra
             (include $migration->getRealPath())->up();
         }
 
+        $app->singleton(
+            \Illuminate\Contracts\Console\Kernel::class,
+            ConsoleKernel::class
+        );
+    }
+
+    protected function defineDatabaseMigrations()
+    {
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
