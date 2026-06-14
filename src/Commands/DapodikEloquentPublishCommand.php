@@ -15,7 +15,7 @@ class DapodikEloquentPublishCommand extends Command
     public function handle(Filesystem $files): int
     {
         $model = $this->argument('model');
-        $sourceRoot = __DIR__.'/../../Models/Rest';
+        $sourceRoot = __DIR__.'/../Models/Rest';
         $destinationRoot = app_path('Models/Dapodik');
 
         if (! $files->isDirectory($sourceRoot)) {
