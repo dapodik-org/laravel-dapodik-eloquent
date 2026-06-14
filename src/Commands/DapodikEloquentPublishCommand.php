@@ -8,13 +8,14 @@ use Illuminate\Support\Str;
 
 class DapodikEloquentPublishCommand extends Command
 {
-    protected $signature = 'dapodik:eloquent-publish {model? : The model key to publish (e.g. agama)}';
+    protected $signature = 'dapodik:eloquent-publish {model? : The model key to publish (e.g. agama)} {--force : Overwrite existing files without confirmation}';
 
     protected $description = 'Publish Eloquent model classes from the package to the application';
 
     public function handle(Filesystem $files): int
     {
         $model = $this->argument('model');
+        $force = $this->option('force');
         $sourceRoot = __DIR__.'/../Models/Rest';
         $destinationRoot = app_path('Models/Dapodik');
 
@@ -35,7 +36,7 @@ class DapodikEloquentPublishCommand extends Command
             }
 
             foreach ($models as $modelFile) {
-                $this->publishModel($files, $modelFile->getPathname(), $sourceRoot, $destinationRoot);
+                $this->publishModel($files, $modelFile->getPathname(), $sourceRoot, $destinationRoot, $force);
             }
 
             $this->info('Published model: '.Str::studly($model));
@@ -44,7 +45,7 @@ class DapodikEloquentPublishCommand extends Command
         }
 
         foreach ($files->allFiles($sourceRoot) as $modelFile) {
-            $this->publishModel($files, $modelFile->getPathname(), $sourceRoot, $destinationRoot);
+            $this->publishModel($files, $modelFile->getPathname(), $sourceRoot, $destinationRoot, $force);
         }
 
         $this->info('Published all package models to '.$destinationRoot);
@@ -52,7 +53,7 @@ class DapodikEloquentPublishCommand extends Command
         return self::SUCCESS;
     }
 
-    protected function publishModel(Filesystem $files, string $sourceFile, string $sourceRoot, string $destinationRoot): void
+    protected function publishModel(Filesystem $files, string $sourceFile, string $sourceRoot, string $destinationRoot, bool $force = false): void
     {
         $contents = $files->get($sourceFile);
 
@@ -67,6 +68,16 @@ class DapodikEloquentPublishCommand extends Command
         $destinationDirectory = dirname($destinationFile);
 
         $files->ensureDirectoryExists($destinationDirectory);
+
+        // Check if file exists and handle accordingly
+        if ($files->exists($destinationFile) && ! $force) {
+            if (! $this->confirm("File already exists: {$relativePath}. Overwrite?")) {
+                $this->line("Skipped: {$relativePath}");
+
+                return;
+            }
+        }
+
         $files->put($destinationFile, $contents);
     }
 }

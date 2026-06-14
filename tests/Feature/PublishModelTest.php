@@ -47,3 +47,25 @@ it('fails when model does not exist', function () {
     $this->artisan('dapodik:eloquent-publish', ['model' => 'non_existent_model'])
         ->assertFailed();
 });
+
+it('can republish models with --force flag', function () {
+    $modelsPath = app_path('Models/Dapodik');
+
+    File::deleteDirectory($modelsPath);
+
+    // First publish
+    $this->artisan('dapodik:eloquent-publish', ['model' => 'agama'])
+        ->assertSuccessful();
+
+    $agamaFile = $modelsPath.'/Ref/Agama.php';
+    $originalContent = File::get($agamaFile);
+
+    // Republish with --force
+    $this->artisan('dapodik:eloquent-publish', ['model' => 'agama', '--force' => true])
+        ->assertSuccessful();
+
+    $newContent = File::get($agamaFile);
+    expect($newContent)->toBe($originalContent);
+
+    File::deleteDirectory($modelsPath);
+});
