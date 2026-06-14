@@ -3,6 +3,7 @@
 namespace Dapodik\Laravel\Eloquent;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
@@ -188,11 +189,44 @@ class EloquentManager
 
     public function getModels(): array
     {
-        return $this->config['models'];
+        return $this->get('models');
     }
 
     public function getModel(string $model): string|array|null
     {
-        return $this->config['models'][$model];
+        return $this->get("models.{$model}");
+    }
+
+    /**
+     * Get many configuration values.
+     *
+     * @param  array<string|int,mixed>  $keys
+     * @return array<string,mixed>
+     */
+    private function getMany(array $keys): array
+    {
+        $config = [];
+
+        foreach ($keys as $key => $default) {
+            if (is_numeric($key)) {
+                [$key, $default] = [$default, null];
+            }
+
+            $config[$key] = Arr::get($this->config, $key, $default);
+        }
+
+        return $config;
+    }
+
+    /**
+     * Get the specified configuration value.
+     */
+    private function get(array|string $key, mixed $default = null): mixed
+    {
+        if (is_array($key)) {
+            return $this->getMany($key);
+        }
+
+        return Arr::get($this->config, $key, $default);
     }
 }
