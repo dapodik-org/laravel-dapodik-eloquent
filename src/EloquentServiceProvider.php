@@ -2,6 +2,7 @@
 
 namespace Dapodik\Laravel\Eloquent;
 
+use Dapodik\Laravel\Eloquent\Commands\DapodikEloquentPublishCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -17,6 +18,7 @@ class EloquentServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-dapodik-eloquent')
             ->hasConfigFile()
+            ->hasCommand(DapodikEloquentPublishCommand::class)
             ->hasMigrations([
                 'create_dapodik_level_wilayah_table',
                 'create_dapodik_negara_table',
