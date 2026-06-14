@@ -3,6 +3,7 @@
 namespace Dapodik\Laravel\Eloquent\Tests;
 
 use Dapodik\Laravel\Eloquent\EloquentServiceProvider;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -35,7 +36,7 @@ class TestCase extends Orchestra
         }
 
         $app->singleton(
-            \Illuminate\Contracts\Console\Kernel::class,
+            Kernel::class,
             ConsoleKernel::class
         );
     }

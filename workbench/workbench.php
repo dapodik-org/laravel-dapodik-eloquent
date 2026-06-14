@@ -1,7 +1,9 @@
 <?php
 
+use Dapodik\Laravel\Eloquent\EloquentServiceProvider;
+
 return [
     'providers' => [
-        \Dapodik\Laravel\Eloquent\EloquentServiceProvider::class,
+        EloquentServiceProvider::class,
     ],
 ];

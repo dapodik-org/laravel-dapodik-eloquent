@@ -7,7 +7,7 @@ it('publishes package migrations', function () {
 
     File::ensureDirectoryExists($migrationsPath);
 
-    $existing = glob($migrationsPath . '/*create_dapodik_agama_table.php');
+    $existing = glob($migrationsPath.'/*create_dapodik_agama_table.php');
     foreach ($existing as $file) {
         File::delete($file);
     }
@@ -15,7 +15,7 @@ it('publishes package migrations', function () {
     $this->artisan('vendor:publish', ['--tag' => 'dapodik-eloquent-migrations'])
         ->assertSuccessful();
 
-    $published = glob($migrationsPath . '/*create_dapodik_agama_table.php');
+    $published = glob($migrationsPath.'/*create_dapodik_agama_table.php');
 
     expect($published)->not->toBeEmpty();
 

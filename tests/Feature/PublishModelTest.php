@@ -8,14 +8,14 @@ it('verify publish model command exists', function () {
 });
 
 it('verify source models exist', function () {
-    $sourcePath = __DIR__ . '/../../src/Models/Rest/Ref';
+    $sourcePath = __DIR__.'/../../src/Models/Rest/Ref';
 
     expect(File::isDirectory($sourcePath))->toBeTrue();
 
     $models = File::files($sourcePath);
     expect($models)->not->toBeEmpty();
 
-    $agamaFile = $sourcePath . '/Agama.php';
+    $agamaFile = $sourcePath.'/Agama.php';
     expect(File::exists($agamaFile))->toBeTrue();
 });
 
