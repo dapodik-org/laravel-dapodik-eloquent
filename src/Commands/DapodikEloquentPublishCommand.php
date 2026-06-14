@@ -15,7 +15,7 @@ class DapodikEloquentPublishCommand extends Command
     public function handle(Filesystem $files): int
     {
         $model = $this->argument('model');
-        $sourceRoot = __DIR__ . '/../../Models/Rest';
+        $sourceRoot = __DIR__.'/../../Models/Rest';
         $destinationRoot = app_path('Models/Dapodik');
 
         if (! $files->isDirectory($sourceRoot)) {
@@ -38,7 +38,7 @@ class DapodikEloquentPublishCommand extends Command
                 $this->publishModel($files, $modelFile->getPathname(), $sourceRoot, $destinationRoot);
             }
 
-            $this->info('Published model: ' . Str::studly($model));
+            $this->info('Published model: '.Str::studly($model));
 
             return self::SUCCESS;
         }
@@ -47,7 +47,7 @@ class DapodikEloquentPublishCommand extends Command
             $this->publishModel($files, $modelFile->getPathname(), $sourceRoot, $destinationRoot);
         }
 
-        $this->info('Published all package models to ' . $destinationRoot);
+        $this->info('Published all package models to '.$destinationRoot);
 
         return self::SUCCESS;
     }
@@ -63,7 +63,7 @@ class DapodikEloquentPublishCommand extends Command
         );
 
         $relativePath = ltrim(str_replace($sourceRoot, '', $sourceFile), DIRECTORY_SEPARATOR);
-        $destinationFile = $destinationRoot . '/' . $relativePath;
+        $destinationFile = $destinationRoot.'/'.$relativePath;
         $destinationDirectory = dirname($destinationFile);
 
         $files->ensureDirectoryExists($destinationDirectory);
