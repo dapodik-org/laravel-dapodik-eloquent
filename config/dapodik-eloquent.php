@@ -97,17 +97,17 @@ return [
     /*
      * Prefix Table
      */
-    'prefix' => 'dapodik',
+    'prefix' => env('DAPODIK_ELOQUENT_PREFIX', 'dapodik'),
 
     /*
      * Suffix Table
      */
-    'suffix' => null,
+    'suffix' => env('DAPODIK_ELOQUENT_SUFFIX', null),
 
     /*
      * Multi Connection Database
      */
-    'multi_connection' => false,
+    'multi_connection' => env('DAPODIK_ELOQUENT_MULTI_CONNECTION', false),
 
     /*
      * Custom Models

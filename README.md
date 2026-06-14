@@ -31,7 +31,41 @@ php artisan vendor:publish --tag="dapodik-eloquent-config"
 This is the contents of the published config file:
 
 ```php
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\LevelWilayah;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Negara;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\KategoriDesa;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\MstWilayah;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Agama;
+
 return [
+    /*
+     * Prefix Table
+     */
+    'prefix' => env('DAPODIK_ELOQUENT_PREFIX', 'dapodik'),
+
+    /*
+     * Suffix Table
+     */
+    'suffix' => env('DAPODIK_ELOQUENT_SUFFIX', null),
+
+    /*
+     * Multi Connection Database
+     */
+    'multi_connection' => env('DAPODIK_ELOQUENT_MULTI_CONNECTION', false),
+    
+    /*
+     * Custom Models
+     */
+    'models' => [
+        'ref' => [
+            'level_wilayah' => LevelWilayah::class,
+            'negara' => Negara::class,
+            'kategori_desa' => KategoriDesa::class,
+            'mst_wilayah' => MstWilayah::class,
+            'agama' => Agama::class,
+            // more..
+        ],
+    ],
 ];
 ```
 
