@@ -18,14 +18,14 @@ composer require dapodik-org/laravel-dapodik-eloquent
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-dapodik-eloquent-migrations"
+php artisan vendor:publish --tag="dapodik-eloquent-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-dapodik-eloquent-config"
+php artisan vendor:publish --tag="dapodik-eloquent-config"
 ```
 
 This is the contents of the published config file:
@@ -33,19 +33,6 @@ This is the contents of the published config file:
 ```php
 return [
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-dapodik-eloquent-views"
-```
-
-## Usage
-
-```php
-$eloquent = new Dapodik\Laravel\Eloquent();
-echo $eloquent->echoPhrase('Hello, Dapodik\Laravel!');
 ```
 
 ## Testing
@@ -69,6 +56,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Dapodik Org](https://github.com/dapodik-org)
+- [Ade Reksi Susanto](https://github.com/adereksisusanto)
 - [All Contributors](../../contributors)
 
 ## License
