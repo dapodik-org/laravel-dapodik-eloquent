@@ -47,4 +47,3 @@ it('fails when model does not exist', function () {
     $this->artisan('dapodik:eloquent-publish', ['model' => 'non_existent_model'])
         ->assertFailed();
 });
-
