@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\File;
 
-it('publishes package migrations', function () {
-    $migrationsPath = database_path('migrations');
+it('publishes package migrations into dapodik subfolder', function () {
+    $migrationsPath = database_path('migrations/dapodik');
 
     File::ensureDirectoryExists($migrationsPath);
 
