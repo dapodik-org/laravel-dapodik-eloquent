@@ -19,6 +19,7 @@ class EloquentServiceProvider extends PackageServiceProvider
             ->name('laravel-dapodik-eloquent')
             ->hasConfigFile()
             ->hasCommand(DapodikEloquentPublishCommand::class)
+            ->discoversMigrations(path: '/database/migrations/dapodik')
             ->hasMigrations([
                 'create_dapodik_level_wilayah_table',
                 'create_dapodik_negara_table',

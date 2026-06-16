@@ -106,16 +106,16 @@ class EloquentManager
     public function getDriverName(): string
     {
         $driver = Schema::getConnection()->getDriverName();
-        if (! in_array($driver, $this->supportDrivers(), true)) {
+        if (! in_array($driver, $this->supportedDrivers(), true)) {
             throw new InvalidArgumentException(
-                "The database driver '{$driver}' is not supported. Supported drivers are: ".implode(', ', $this->supportDrivers())
+                "The database driver '{$driver}' is not supported. Supported drivers are: ".implode(', ', $this->supportedDrivers())
             );
         }
 
         return $driver;
     }
 
-    protected function supportDrivers(): array
+    protected function supportedDrivers(): array
     {
         return ['mysql', 'pgsql', 'sqlite'];
     }

@@ -110,7 +110,7 @@ return [
     'multi_connection' => env('DAPODIK_ELOQUENT_MULTI_CONNECTION', false),
 
     /*
-     * Custom Models
+     * Custom Models (coming soon)
      */
     'models' => [
         'ref' => [

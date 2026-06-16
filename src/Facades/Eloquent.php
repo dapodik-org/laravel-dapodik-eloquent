@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getModels()
  * @method static null|string|array getModel(string $model)
  * @method static bool isMultiConnection()
- * @method static array supportDrivers()
+ * @method static array supportedDrivers()
  *
  * @see EloquentManager
  */
