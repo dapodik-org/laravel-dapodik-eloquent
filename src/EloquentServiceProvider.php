@@ -34,7 +34,7 @@ class EloquentServiceProvider extends PackageServiceProvider
                 'dapodik/create_dapodik_bentuk_pendidikan_table',
                 'dapodik/create_dapodik_bidang_studi_table',
                 'dapodik/create_dapodik_bidang_usaha_table',
-                'dapodik/create_dapodik_ekstrakurikuler_table',
+                'dapodik/create_dapodik_ekstra_kurikuler_table',
                 'dapodik/create_dapodik_errortype_table',
                 'dapodik/create_dapodik_fasilitas_layanan_table',
                 'dapodik/create_dapodik_gelar_akademik_table',
