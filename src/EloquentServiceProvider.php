@@ -138,4 +138,9 @@ class EloquentServiceProvider extends PackageServiceProvider
     {
         app('dapodik.eloquent.laravel');
     }
+
+    public function packageBooted(): void
+    {
+        $this->loadMigrationsFrom(database_path('migrations/dapodik'));
+    }
 }
