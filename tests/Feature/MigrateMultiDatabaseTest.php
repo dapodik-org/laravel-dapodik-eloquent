@@ -2,6 +2,7 @@
 
 use Dapodik\Laravel\Eloquent\EloquentManager;
 use Dapodik\Laravel\Eloquent\Facades\Eloquent;
+use Dapodik\Laravel\Eloquent\Models\Rest\Ref\Agama;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Schema;
@@ -50,7 +51,7 @@ it('creates tables on model connection with multi-database enabled', function ()
 
     $this->artisan('migrate')->assertSuccessful();
 
-    $connection = app(\Dapodik\Laravel\Eloquent\Models\Rest\Ref\Agama::class)->getConnectionName();
+    $connection = app(Agama::class)->getConnectionName();
     expect($connection)->toBe('sqlite_ref');
 
     expect(Schema::connection($connection)->hasTable('dapodik_ref_agama'))->toBeTrue();
@@ -60,7 +61,7 @@ it('creates tables on model connection with multi-database enabled', function ()
 it('drops and recreates tables via migrate:fresh with multi-database', function () {
     $this->artisan('migrate')->assertSuccessful();
 
-    $connection = app(\Dapodik\Laravel\Eloquent\Models\Rest\Ref\Agama::class)->getConnectionName();
+    $connection = app(Agama::class)->getConnectionName();
     expect(Schema::connection($connection)->hasTable('dapodik_ref_agama'))->toBeTrue();
 
     $this->artisan('migrate:fresh')->assertSuccessful();
