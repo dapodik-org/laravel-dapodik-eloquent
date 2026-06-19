@@ -124,6 +124,11 @@ class EloquentServiceProvider extends PackageServiceProvider
                 // 'dapodik/create_dapodik_tetangga_kabkota_table',
                 // 'dapodik/create_dapodik_variabel_table',
                 // 'dapodik/create_dapodik_variabel_value_table',
+                // PUBLIC
+                'dapodik/create_dapodik_yayasan_table',
+                'dapodik/create_dapodik_sekolah_table',
+                'dapodik/create_dapodik_ptk_table',
+                'dapodik/create_dapodik_peserta_didik_table',
             ]);
     }
 

@@ -3,6 +3,8 @@
 use Dapodik\Laravel\Eloquent\Commands\DapodikEloquentPublishCommand;
 use Illuminate\Support\Facades\File;
 
+use function Pest\Laravel\artisan;
+
 it('verifies the model publish command is available', function () {
     expect(class_exists(DapodikEloquentPublishCommand::class))->toBeTrue();
 });
@@ -12,7 +14,7 @@ it('can publish all models using artisan', function () {
 
     File::deleteDirectory($modelsPath);
 
-    $this->artisan('dapodik:eloquent-publish')
+    artisan('dapodik:eloquent-publish')
         ->assertSuccessful();
 
     $agamaFile = $modelsPath.'/Ref/Agama.php';
@@ -30,7 +32,7 @@ it('can publish a single model using artisan', function () {
 
     File::deleteDirectory($modelsPath);
 
-    $this->artisan('dapodik:eloquent-publish', ['model' => 'agama'])
+    artisan('dapodik:eloquent-publish', ['model' => 'agama'])
         ->assertSuccessful();
 
     $agamaFile = $modelsPath.'/Ref/Agama.php';
@@ -43,7 +45,7 @@ it('can publish a single model using artisan', function () {
 });
 
 it('fails when model is not found', function () {
-    $this->artisan('dapodik:eloquent-publish', ['model' => 'non_existent_model'])
+    artisan('dapodik:eloquent-publish', ['model' => 'non_existent_model'])
         ->assertFailed();
 });
 
@@ -52,13 +54,13 @@ it('can republish model with --force flag', function () {
 
     File::deleteDirectory($modelsPath);
 
-    $this->artisan('dapodik:eloquent-publish', ['model' => 'agama'])
+    artisan('dapodik:eloquent-publish', ['model' => 'agama'])
         ->assertSuccessful();
 
     $agamaFile = $modelsPath.'/Ref/Agama.php';
     $originalContent = File::get($agamaFile);
 
-    $this->artisan('dapodik:eloquent-publish', ['model' => 'agama', '--force' => true])
+    artisan('dapodik:eloquent-publish', ['model' => 'agama', '--force' => true])
         ->assertSuccessful();
 
     $newContent = File::get($agamaFile);

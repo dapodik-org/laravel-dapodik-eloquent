@@ -113,6 +113,12 @@ return [
      * Custom Models (coming soon)
      */
     'models' => [
+        'public' => [
+            'yayasan' => \Dapodik\Laravel\Eloquent\Models\Rest\Public\Yayasan::class,
+            'sekolah' => \Dapodik\Laravel\Eloquent\Models\Rest\Public\Sekolah::class,
+            'ptk' => \Dapodik\Laravel\Eloquent\Models\Rest\Public\Ptk::class,
+            'peserta_didik' => \Dapodik\Laravel\Eloquent\Models\Rest\Public\PesertaDidik::class,
+        ],
         'ref' => [
             'level_wilayah' => LevelWilayah::class,
             'negara' => Negara::class,

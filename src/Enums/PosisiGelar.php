@@ -4,14 +4,14 @@ namespace Dapodik\Laravel\Eloquent\Enums;
 
 enum PosisiGelar: int
 {
-    case DEPAN = 1;
-    case BELAKANG = 2;
+    case Depan = 1;
+    case Belakang = 2;
 
     public function label(): string
     {
         return match ($this) {
-            self::DEPAN => 'Depan',
-            self::BELAKANG => 'Belakang',
+            self::Depan => 'Depan',
+            self::Belakang => 'Belakang',
         };
     }
 }
