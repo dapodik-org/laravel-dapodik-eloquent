@@ -17,7 +17,7 @@ class MataPelajaranKurikulum extends Pivot
         return [
             'jumlah_jam' => 'decimal',
             'jumlah_jam_maksimum' => 'decimal',
-            'wajib' => 'boolean',
+            'wajib' => 'decimal',
             'sks' => 'decimal',
             'a_peminatan' => 'boolean',
         ];

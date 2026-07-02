@@ -17,7 +17,7 @@ class AksesInternet extends Model
     protected function casts(): array
     {
         return [
-            'media' => 'boolean',
+            'media' => 'decimal',
         ];
     }
 }

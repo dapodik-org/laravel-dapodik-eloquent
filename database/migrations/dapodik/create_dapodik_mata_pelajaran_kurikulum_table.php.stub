@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('jumlah_jam', 2, 0);
             $table->decimal('jumlah_jam_maksimum', 2, 0);
             $table->bigInteger('status_di_kurikulum');
-            $table->boolean('wajib');
+            $table->decimal('wajib', 1, 0);
             $table->decimal('sks', 2, 0)->default(0);
             $table->boolean('a_peminatan');
             $table->char('area_kompetensi', 1);
