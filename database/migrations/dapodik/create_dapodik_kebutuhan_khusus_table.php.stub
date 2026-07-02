@@ -34,6 +34,7 @@ return new class extends Migration
             $table->boolean('untuk_lembaga')->default(true);
             $table->boolean('untuk_ptk')->default(true);
             $table->boolean('untuk_pd')->default(true);
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

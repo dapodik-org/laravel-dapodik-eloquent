@@ -52,6 +52,7 @@ return new class extends Migration
             $table->string('nm_wp')->nullable();
             $table->boolean('keaktifan')->default(true);
             $table->char('flag', 3)->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

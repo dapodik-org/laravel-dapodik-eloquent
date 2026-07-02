@@ -13,4 +13,11 @@ class BentukLembaga extends Model
     protected $primaryKey = 'bentuk_lembaga_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

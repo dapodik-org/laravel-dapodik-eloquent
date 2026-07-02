@@ -13,4 +13,11 @@ class Errortype extends Model
     protected $primaryKey = 'idtype';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

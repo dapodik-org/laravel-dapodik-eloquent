@@ -17,6 +17,7 @@ class MataPelajaran extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'pilihan_sekolah' => 'boolean',
             'pilihan_buku' => 'boolean',
             'pilihan_kepengawasan' => 'boolean',

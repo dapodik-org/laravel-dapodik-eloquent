@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->bigInteger('batas_bawah');
             $table->bigInteger('batas_atas');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

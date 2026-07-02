@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->boolean('untuk_sekolah');
             $table->boolean('untuk_pd');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

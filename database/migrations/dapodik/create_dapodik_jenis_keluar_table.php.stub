@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('ket_keluar');
             $table->boolean('keluar_pd');
             $table->boolean('keluar_ptk');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

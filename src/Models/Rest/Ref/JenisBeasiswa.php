@@ -17,6 +17,7 @@ class JenisBeasiswa extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'untuk_pd' => 'boolean',
             'untuk_ptk' => 'boolean',
         ];

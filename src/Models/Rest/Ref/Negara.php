@@ -19,6 +19,7 @@ class Negara extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'luar_negeri' => 'boolean',
         ];
     }

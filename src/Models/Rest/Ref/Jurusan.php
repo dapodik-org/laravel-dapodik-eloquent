@@ -19,6 +19,7 @@ class Jurusan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'untuk_sma' => 'boolean',
             'untuk_smk' => 'boolean',
             'untuk_pt' => 'boolean',

@@ -19,6 +19,7 @@ class LembagaAkreditasi extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'la_tgl_mulai' => 'date',
             'rt' => 'boolean',
             'rw' => 'boolean',

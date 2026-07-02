@@ -17,6 +17,7 @@ class JenisKesejahteraan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'u_ptk' => 'boolean',
             'u_pd' => 'boolean',
         ];

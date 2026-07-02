@@ -13,4 +13,11 @@ class WaktuPenyelenggaraan extends Model
     protected $primaryKey = 'waktu_penyelenggaraan_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

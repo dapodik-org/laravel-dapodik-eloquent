@@ -13,4 +13,11 @@ class KeahlianLaboratorium extends Model
     protected $primaryKey = 'keahlian_laboratorium_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

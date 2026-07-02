@@ -13,4 +13,11 @@ class KategoriDesa extends Model
     protected $primaryKey = 'kategori_desa_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

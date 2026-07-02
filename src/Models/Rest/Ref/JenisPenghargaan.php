@@ -13,4 +13,11 @@ class JenisPenghargaan extends Model
     protected $primaryKey = 'jenis_penghargaan_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

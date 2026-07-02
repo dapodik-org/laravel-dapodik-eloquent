@@ -16,6 +16,7 @@ class StandarSarana extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'a_harus_ada' => 'boolean',
         ];
     }

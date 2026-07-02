@@ -13,4 +13,11 @@ class SumberListrik extends Model
     protected $primaryKey = 'sumber_listrik_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

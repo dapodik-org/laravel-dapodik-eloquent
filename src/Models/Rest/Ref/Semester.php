@@ -19,6 +19,7 @@ class Semester extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'semester' => 'decimal',
             'periode_aktif' => 'boolean',
             'tanggal_mulai' => 'date',

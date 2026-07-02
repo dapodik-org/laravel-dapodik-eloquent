@@ -17,6 +17,7 @@ class LembSertifikasi extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'tmt_lemb_sert' => 'date',
             'rt' => 'decimal',
             'rw' => 'decimal',

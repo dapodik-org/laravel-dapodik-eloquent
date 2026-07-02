@@ -17,6 +17,7 @@ class JabatanTugasPtk extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'jabatan_utama' => 'boolean',
             'tugas_tambahan_guru' => 'boolean',
             'harus_refer_unit_org' => 'boolean',

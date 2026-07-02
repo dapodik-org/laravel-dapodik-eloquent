@@ -17,6 +17,7 @@ class JenisPrasarana extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'a_unit_organisasi' => 'boolean',
             'a_tanah' => 'boolean',
             'a_bangunan' => 'boolean',

@@ -13,4 +13,11 @@ class JenisHobby extends Model
     protected $primaryKey = 'id_hobby';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

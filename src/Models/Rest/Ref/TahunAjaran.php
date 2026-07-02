@@ -17,6 +17,7 @@ class TahunAjaran extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'periode_aktif' => 'boolean',
             'tanggal_mulai' => 'date',
             'tanggal_selesai' => 'date',

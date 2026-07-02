@@ -24,6 +24,7 @@ return new class extends Migration
             $table->boolean('a_peminatan');
             $table->char('area_kompetensi', 1);
             $table->uuid('gmp_id')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

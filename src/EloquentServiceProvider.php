@@ -20,6 +20,8 @@ class EloquentServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasCommand(DapodikEloquentPublishCommand::class)
             ->hasMigrations([
+                'dapodik/create_dapodik_sync_status_table',
+                // REF
                 'dapodik/create_dapodik_level_wilayah_table',
                 'dapodik/create_dapodik_negara_table',
                 'dapodik/create_dapodik_kategori_desa_table',

@@ -13,4 +13,11 @@ class StatusKepemilikan extends Model
     protected $primaryKey = 'status_kepemilikan_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

@@ -17,6 +17,7 @@ class JenisLembaga extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'tempat_pengawas' => 'boolean',
             'simpul_pendataan' => 'boolean',
         ];

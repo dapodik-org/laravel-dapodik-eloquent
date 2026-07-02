@@ -16,6 +16,7 @@ return new class extends Migration
             $table->char('bidang_usaha_id', 10)->primary();
             $table->string('nama_bidang_usaha');
             $table->string('level_bidang_usaha')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

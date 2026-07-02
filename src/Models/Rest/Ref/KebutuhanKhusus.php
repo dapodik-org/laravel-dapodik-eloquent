@@ -17,6 +17,7 @@ class KebutuhanKhusus extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'kk_a' => 'boolean',
             'kk_b' => 'boolean',
             'kk_c' => 'boolean',

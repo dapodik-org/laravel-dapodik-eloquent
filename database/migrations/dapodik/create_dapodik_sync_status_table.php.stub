@@ -1,23 +1,23 @@
 <?php
 
 use Dapodik\Laravel\Eloquent\Migration;
-use Dapodik\Laravel\Eloquent\Models\Rest\Ref\TingkatPrestasi;
+use Dapodik\Laravel\Eloquent\Models\SyncStatus;
 use Illuminate\Database\Schema\Blueprint;
 
 return new class extends Migration
 {
-    protected string $model = TingkatPrestasi::class;
+    protected string $model = SyncStatus::class;
 
     public function up(): void
     {
         $this->createSchemaIfNotExist();
 
         $this->createTable(function (Blueprint $table) {
-            $table->bigInteger('tingkat_prestasi_id')->primary();
-            $table->string('nama');
+            $table->id();
+            $table->string('target_table')->unique();
+            $table->bigInteger('records_synced')->default(0);
             $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

@@ -19,6 +19,7 @@ class MstWilayah extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'a_desa' => 'boolean',
             'a_kelurahan' => 'boolean',
             'a_35' => 'boolean',

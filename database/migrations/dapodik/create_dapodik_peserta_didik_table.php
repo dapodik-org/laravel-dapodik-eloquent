@@ -74,6 +74,7 @@ return new class extends Migration
             $table->bigInteger('penghasilan_id_wali')->nullable();
             $table->char('kewarganegaraan', 2);
             $table->bigInteger('pekerjaan_id')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

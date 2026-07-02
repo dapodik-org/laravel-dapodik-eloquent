@@ -17,6 +17,7 @@ class JenisBantuan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'untuk_sekolah' => 'boolean',
             'untuk_pd' => 'boolean',
         ];

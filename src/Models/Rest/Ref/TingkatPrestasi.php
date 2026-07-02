@@ -13,4 +13,11 @@ class TingkatPrestasi extends Model
     protected $primaryKey = 'tingkat_prestasi_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

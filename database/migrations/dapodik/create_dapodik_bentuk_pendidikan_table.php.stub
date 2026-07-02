@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('direktorat_pembinaan')->nullable();
             $table->boolean('aktif');
             $table->char('formalitas_pendidikan', 1);
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

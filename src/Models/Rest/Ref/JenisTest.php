@@ -17,6 +17,7 @@ class JenisTest extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'nilai_maks' => 'decimal',
         ];
     }

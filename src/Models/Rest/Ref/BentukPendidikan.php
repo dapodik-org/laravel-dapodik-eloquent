@@ -17,6 +17,7 @@ class BentukPendidikan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'jenjang_paud' => 'boolean',
             'jenjang_tk' => 'boolean',
             'jenjang_sd' => 'boolean',

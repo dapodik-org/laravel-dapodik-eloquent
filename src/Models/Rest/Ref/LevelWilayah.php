@@ -13,4 +13,11 @@ class LevelWilayah extends Model
     protected $primaryKey = 'id_level_wilayah';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

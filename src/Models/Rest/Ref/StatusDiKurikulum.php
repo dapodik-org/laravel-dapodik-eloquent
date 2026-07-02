@@ -13,4 +13,11 @@ class StatusDiKurikulum extends Model
     protected $primaryKey = 'status_di_kurikulum';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

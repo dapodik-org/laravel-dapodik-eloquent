@@ -17,6 +17,7 @@ class EkstraKurikuler extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'u_sd' => 'boolean',
             'u_smp' => 'boolean',
             'u_sma' => 'boolean',

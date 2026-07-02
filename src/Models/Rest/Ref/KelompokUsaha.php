@@ -15,4 +15,11 @@ class KelompokUsaha extends Model
     public $incrementing = false;
 
     protected $keyType = 'string';
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

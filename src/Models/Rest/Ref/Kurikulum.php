@@ -17,6 +17,7 @@ class Kurikulum extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'mulai_berlaku' => 'date',
             'sistem_sks' => 'boolean',
             'total_sks' => 'decimal',

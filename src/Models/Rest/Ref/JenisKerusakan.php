@@ -17,6 +17,7 @@ class JenisKerusakan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'u_bangunan' => 'boolean',
             'u_ruang' => 'boolean',
         ];

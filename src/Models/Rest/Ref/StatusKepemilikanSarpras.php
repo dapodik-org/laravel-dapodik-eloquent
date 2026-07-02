@@ -13,4 +13,11 @@ class StatusKepemilikanSarpras extends Model
     protected $primaryKey = 'kepemilikan_sarpras_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

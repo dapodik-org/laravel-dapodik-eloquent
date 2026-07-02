@@ -13,4 +13,11 @@ class JenisKoneksi extends Model
     protected $primaryKey = 'jenis_koneksi_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

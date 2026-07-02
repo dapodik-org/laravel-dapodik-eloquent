@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('laboran');
             $table->boolean('a_pd');
             $table->bigInteger('kebutuhan_khusus_id');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

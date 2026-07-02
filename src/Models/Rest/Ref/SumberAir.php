@@ -17,6 +17,7 @@ class SumberAir extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'sumber_air' => 'boolean',
             'sumber_minum' => 'boolean',
         ];

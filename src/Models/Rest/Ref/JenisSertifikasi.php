@@ -17,6 +17,7 @@ class JenisSertifikasi extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'prof_guru' => 'boolean',
             'kepala_sekolah' => 'boolean',
             'laboran' => 'boolean',

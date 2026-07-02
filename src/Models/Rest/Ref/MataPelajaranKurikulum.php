@@ -15,6 +15,7 @@ class MataPelajaranKurikulum extends Pivot
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'jumlah_jam' => 'decimal',
             'jumlah_jam_maksimum' => 'decimal',
             'wajib' => 'decimal',

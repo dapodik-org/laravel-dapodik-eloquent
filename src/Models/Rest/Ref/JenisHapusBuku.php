@@ -19,6 +19,7 @@ class JenisHapusBuku extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'u_prasarana' => 'boolean',
             'u_sarana' => 'boolean',
         ];

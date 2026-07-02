@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama')->nullable();
             $table->boolean('a_wirausaha')->default(false);
             $table->boolean('a_pejabat_publik')->default(false);
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

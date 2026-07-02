@@ -13,4 +13,11 @@ class JenisCita extends Model
     protected $primaryKey = 'id_cita';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

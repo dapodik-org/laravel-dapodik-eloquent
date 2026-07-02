@@ -72,6 +72,7 @@ return new class extends Migration
             $table->string('rekening_bank')->nullable();
             $table->string('rekening_atas_nama')->nullable();
             $table->uuid('blob_id')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

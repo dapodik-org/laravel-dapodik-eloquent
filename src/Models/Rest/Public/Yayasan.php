@@ -16,6 +16,7 @@ class Yayasan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'rt' => 'decimal',
             'rw' => 'decimal',
             'lintang' => 'decimal',

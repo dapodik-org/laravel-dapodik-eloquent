@@ -17,6 +17,7 @@ class JenjangPendidikan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'jenjang_lembaga' => 'boolean',
             'jenjang_orang' => 'boolean',
         ];

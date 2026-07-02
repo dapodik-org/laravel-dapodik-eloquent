@@ -13,4 +13,11 @@ class JenisKs extends Model
     protected $primaryKey = 'id_jns_ks';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

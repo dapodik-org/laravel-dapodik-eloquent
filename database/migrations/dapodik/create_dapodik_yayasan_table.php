@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('nomor_pengesahan_pn_ln')->nullable();
             $table->string('nomor_sk_bn')->nullable();
             $table->date('tanggal_sk_bn')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

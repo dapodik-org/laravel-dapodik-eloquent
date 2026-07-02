@@ -13,4 +13,11 @@ class AlasanLayakPip extends Model
     protected $primaryKey = 'id_layak_pip';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

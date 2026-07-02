@@ -30,6 +30,7 @@ return new class extends Migration
             $table->boolean('a_35')->default(false);
             $table->boolean('a_urban')->default(false);
             $table->bigInteger('kategori_desa_id')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

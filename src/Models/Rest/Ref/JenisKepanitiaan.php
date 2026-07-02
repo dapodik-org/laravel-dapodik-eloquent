@@ -13,4 +13,11 @@ class JenisKepanitiaan extends Model
     protected $primaryKey = 'id_jns_panitia';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

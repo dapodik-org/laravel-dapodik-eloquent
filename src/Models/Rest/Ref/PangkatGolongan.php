@@ -13,4 +13,11 @@ class PangkatGolongan extends Model
     protected $primaryKey = 'pangkat_golongan_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

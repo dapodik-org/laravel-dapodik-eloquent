@@ -13,4 +13,11 @@ class AlatTransportasi extends Model
     protected $primaryKey = 'alat_transportasi_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

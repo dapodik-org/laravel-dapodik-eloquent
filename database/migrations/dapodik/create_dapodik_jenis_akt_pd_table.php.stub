@@ -16,6 +16,7 @@ return new class extends Migration
             $table->bigInteger('id_jns_akt_pd')->primary();
             $table->string('nm_jns_akt_pd');
             $table->string('ket_jns_akt_pd')->nullable();
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

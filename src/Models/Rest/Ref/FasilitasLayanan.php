@@ -13,4 +13,11 @@ class FasilitasLayanan extends Model
     protected $primaryKey = 'fasilitas_layanan_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

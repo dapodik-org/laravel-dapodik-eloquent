@@ -17,6 +17,7 @@ class AksesInternet extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'media' => 'decimal',
         ];
     }

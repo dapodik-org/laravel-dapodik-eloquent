@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->boolean('tempat_pengawas');
             $table->boolean('simpul_pendataan');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

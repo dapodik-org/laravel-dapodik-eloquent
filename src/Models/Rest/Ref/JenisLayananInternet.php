@@ -13,4 +13,11 @@ class JenisLayananInternet extends Model
     protected $primaryKey = 'jenis_layanan_internet_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

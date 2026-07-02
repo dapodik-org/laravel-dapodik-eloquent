@@ -13,4 +13,11 @@ class SertifikasiIso extends Model
     protected $primaryKey = 'sertifikasi_iso_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

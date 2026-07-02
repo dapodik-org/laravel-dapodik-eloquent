@@ -13,4 +13,11 @@ class KlasifikasiLembaga extends Model
     protected $primaryKey = 'klasifikasi_lembaga_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

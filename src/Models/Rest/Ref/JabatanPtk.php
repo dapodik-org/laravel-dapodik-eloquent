@@ -13,4 +13,11 @@ class JabatanPtk extends Model
     protected $primaryKey = 'jabatan_ptk_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

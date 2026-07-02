@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->boolean('jenjang_lembaga');
             $table->boolean('jenjang_orang');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

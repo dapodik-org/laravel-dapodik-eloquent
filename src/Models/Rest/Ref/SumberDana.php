@@ -13,4 +13,11 @@ class SumberDana extends Model
     protected $primaryKey = 'sumber_dana_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

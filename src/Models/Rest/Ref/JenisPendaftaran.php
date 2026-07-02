@@ -17,6 +17,7 @@ class JenisPendaftaran extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'daftar_sekolah' => 'boolean',
             'daftar_rombel' => 'boolean',
         ];

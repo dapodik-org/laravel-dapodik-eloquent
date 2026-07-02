@@ -17,6 +17,7 @@ class JenjangKepengawasan extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'jenjang_kepengawasan_tk' => 'boolean',
             'jenjang_kepengawasan_sd' => 'boolean',
             'jenjang_kepengawasan_smp' => 'boolean',

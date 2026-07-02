@@ -19,6 +19,7 @@ class JenisKeluar extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'keluar_pd' => 'boolean',
             'keluar_ptk' => 'boolean',
         ];

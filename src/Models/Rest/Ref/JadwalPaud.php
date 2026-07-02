@@ -17,6 +17,7 @@ class JadwalPaud extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'kesehatan' => 'boolean',
             'pamts' => 'boolean',
             'ddtk' => 'boolean',

@@ -13,4 +13,11 @@ class JenisRombel extends Model
     protected $primaryKey = 'jenis_rombel';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

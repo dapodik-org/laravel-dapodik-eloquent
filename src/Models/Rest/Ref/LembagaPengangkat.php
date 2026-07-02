@@ -13,4 +13,11 @@ class LembagaPengangkat extends Model
     protected $primaryKey = 'lembaga_pengangkat_id';
 
     public $incrementing = false;
+
+    protected function casts(): array
+    {
+        return [
+            'last_sync_at' => 'datetime',
+        ];
+    }
 }

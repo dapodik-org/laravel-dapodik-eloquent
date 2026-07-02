@@ -17,6 +17,7 @@ class JenisSarana extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'perlu_penempatan' => 'boolean',
             'a_alat' => 'boolean',
             'a_angkutan' => 'boolean',

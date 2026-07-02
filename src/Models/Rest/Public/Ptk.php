@@ -16,6 +16,7 @@ class Ptk extends Model
     protected function casts(): array
     {
         return [
+            'last_sync_at' => 'datetime',
             'tanggal_lahir' => 'date',
             'rt' => 'decimal',
             'rw' => 'decimal',

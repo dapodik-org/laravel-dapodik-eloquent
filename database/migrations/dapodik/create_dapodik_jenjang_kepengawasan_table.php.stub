@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('jenjang_kepengawasan_sma');
             $table->boolean('jenjang_kepengawasan_smk');
             $table->boolean('jenjang_kepengawasan_slb');
+            $table->timestamp('last_sync_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
