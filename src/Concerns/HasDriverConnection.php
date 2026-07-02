@@ -9,12 +9,8 @@ trait HasDriverConnection
 {
     protected ?string $schema = null;
 
-    /**
-     * Get the connection name for the model.
-     */
     public function getConnectionName(): string
     {
-        // If multi-connection is disabled, fall back to Laravel's default connection
         if (! Eloquent::isMultiConnection()) {
             return $this->connection ?? config('database.default');
         }
@@ -23,13 +19,9 @@ trait HasDriverConnection
         $folder = $parts['folder'];
         $driver = $parts['driver'];
 
-        // The top-level folder under Models\Rest\ dictates the connection name
-        return "{$driver}_{$folder}";
+        return $folder ? "{$driver}_{$folder}" : $driver;
     }
 
-    /**
-     * Get the table name for the model.
-     */
     public function getTable(): string
     {
         $prefix = Eloquent::getConfig()['prefix'] ?? null;
@@ -39,52 +31,39 @@ trait HasDriverConnection
         $tableName = $parts['table'];
 
         if (Eloquent::isMultiConnection()) {
-            $driver = $parts['driver'];
-
-            if ($driver === 'pgsql') {
+            if (Eloquent::getDriverName() === 'pgsql') {
                 $this->setSchema($folder);
-
-                return $prefix
-                    ? "{$prefix}_{$folder}_{$tableName}"
-                    : "{$folder}_{$tableName}";
-            }
-
-            if ($driver === 'mysql') {
-                return $prefix
-                    ? "{$prefix}_{$folder}_{$tableName}"
-                    : "{$folder}_{$tableName}";
             }
         }
 
-        return $prefix
-            ? "{$prefix}_{$folder}_{$tableName}"
-            : "{$folder}_{$tableName}";
+        $segments = array_filter([$prefix, $folder, $tableName]);
+
+        return implode('_', $segments);
     }
 
-    /**
-     * Helper to extract and format namespace parts.
-     */
     private function getNamespaceParts(): array
     {
-        // Try to extract namespace after Models\Rest\ (original location)
         $afterModels = (string) str(__CLASS__)->after('Models\\Rest\\');
 
-        // If not found (model is published), try Models\Dapodik\ (published location)
         if ($afterModels === (string) __CLASS__) {
             $afterModels = (string) str(__CLASS__)->after('Models\\Dapodik\\');
+        }
+
+        if ($afterModels === (string) __CLASS__) {
+            return [
+                'driver' => Eloquent::getDriverName(),
+                'folder' => '',
+                'table' => Str::snake(class_basename(__CLASS__)),
+            ];
         }
 
         $parts = explode('\\', $afterModels);
         $snakeParts = array_map(fn ($part) => Str::snake($part), $parts);
 
-        $folder = $snakeParts[0];
-
-        $driver = Eloquent::getDriverName();
-
         return [
-            'driver' => $driver,
-            'folder' => $folder,
-            'table' => $snakeParts[1] ?? $folder,
+            'driver' => Eloquent::getDriverName(),
+            'folder' => $snakeParts[0],
+            'table' => $snakeParts[1] ?? $snakeParts[0],
         ];
     }
 
